@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gazulito - Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Gazulito</h1>
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#precios" class="cta">Ver precios</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Cilindros de gas a domicilio</h2>
+      <p>Entrega rápida y segura en tu zona.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#contacto">Solicitar cotización</a>
+        <!-- WhatsApp CTA -->
+        <a class="btn whatsapp" href="https://wa.me/573134971077?text=Hola%20Gazulito,%20quiero%20informaci%C3%B3n%20sobre%20cilindros" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+      </div>
+    </section>
+
+    <section id="productos" class="productos">
+      <h3>Productos</h3>
+      <div class="card-grid">
+        <article class="card">
+          <h4>Cilindro 10 kg</h4>
+          <p>Ideal para apartamentos.</p>
+          <a class="btn small" href="#contacto">Pedir ahora</a>
+        </article>
+        <article class="card">
+          <h4>Cilindro 20 kg</h4>
+          <p>Mayor autonomía para casas.</p>
+          <a class="btn small" href="#contacto">Pedir ahora</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <h3>Contacto</h3>
+      <form id="contactForm">
+        <input name="name" placeholder="Nombre" required />
+        <input name="email" type="email" placeholder="Correo" required />
+        <input name="phone" placeholder="Teléfono (opcional)" />
+        <textarea name="message" placeholder="Mensaje" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+      <p class="info">O también puedes escribir por WhatsApp: <a href="https://wa.me/573001234567" target="_blank">WhatsApp Gazulito</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Gazulito SAS
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
