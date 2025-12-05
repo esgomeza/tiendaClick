@@ -1,0 +1,444 @@
+/* RESET Y BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #2c3e50, #4a6491);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.logo i {
+    font-size: 3rem;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.logo span {
+    color: #ffd700;
+}
+
+.slogan {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* INSTRUCCIONES */
+.instrucciones {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.instrucciones h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pasos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.paso {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-top: 4px solid #4a6491;
+}
+
+.numero {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #4a6491;
+    color: white;
+    border-radius: 50%;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* SELECTOR DE PRODUCTOS */
+.selector-productos {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.selector-productos h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.producto-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.select-producto {
+    padding: 15px;
+    border: 2px solid #4a6491;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.select-producto:focus {
+    outline: none;
+    border-color: #ffd700;
+}
+
+.cantidad-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cantidad-control label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.contador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-cantidad {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #4a6491;
+    color: white;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-cantidad:hover {
+    background: #2c3e50;
+}
+
+.input-cantidad {
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.btn-agregar {
+    padding: 12px 25px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.btn-agregar:hover {
+    background: #219653;
+}
+
+/* LISTA DEL PEDIDO */
+.lista-pedido {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.lista-pedido h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabla-pedido {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #4a6491;
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.vacio {
+    text-align: center;
+    color: #777;
+    padding: 30px;
+}
+
+.btn-eliminar {
+    padding: 8px 15px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.total-label {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.total-valor {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #27ae60;
+}
+
+/* INFORMACIÓN DEL CLIENTE */
+.info-cliente {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.info-cliente h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.formulario-cliente {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.formulario-cliente input,
+.formulario-cliente textarea {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.formulario-cliente input:focus,
+.formulario-cliente textarea:focus {
+    outline: none;
+    border-color: #4a6491;
+}
+
+.formulario-cliente textarea {
+    grid-column: 1 / -1;
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* BOTÓN GRANDE DE WHATSAPP */
+.whatsapp-grande {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.btn-whatsapp-grande {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-whatsapp-grande:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp-grande i {
+    font-size: 3rem;
+}
+
+.whatsapp-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.whatsapp-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.whatsapp-sub {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: normal;
+}
+
+.whatsapp-ayuda {
+    margin-top: 15px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* FOOTER */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.info-contacto {
+    margin-bottom: 25px;
+}
+
+.info-contacto h4 {
+    color: #ffd700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-contacto p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.derechos {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #aaa;
+}
+
+.ayuda {
+    color: #ffd700;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .pasos {
+        flex-direction: column;
+    }
+    
+    .producto-selector {
+        flex-direction: column;
+    }
+    
+    .cantidad-control {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-whatsapp-grande {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+    
+    .whatsapp-texto {
+        align-items: center;
+        text-align: center;
+    }
+    
+    th, td {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+}
