@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Click - Pedidos Rápidos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Simple -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-store"></i>
+            <h1>Tienda <span>Click</span></h1>
+            <p class="slogan">Pedidos rápidos por WhatsApp</p>
+        </div>
+    </header>
+
+    <!-- Instrucciones -->
+    <section class="instrucciones">
+        <h2><i class="fas fa-shopping-cart"></i> Haz tu pedido en 3 pasos:</h2>
+        <div class="pasos">
+            <div class="paso">
+                <span class="numero">1</span>
+                <p>Elige productos</p>
+            </div>
+            <div class="paso">
+                <span class="numero">2</span>
+                <p>Selecciona cantidad</p>
+            </div>
+            <div class="paso">
+                <span class="numero">3</span>
+                <p>Envía por WhatsApp</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selector de Productos -->
+    <section class="selector-productos">
+        <h3><i class="fas fa-list"></i> Selecciona tus productos:</h3>
+        
+        <!-- Lista desplegable de productos -->
+        <div class="producto-selector">
+            <select id="selectProducto" class="select-producto">
+                <option value="">-- Elige un producto --</option>
+                <option value="frijol">Frijol (1kg) - $8.000</option>
+                <option value="arroz">Arroz (1kg) - $4.500</option>
+                <option value="aceite">Aceite (1L) - $12.000</option>
+                <option value="sal">Sal (500g) - $2.500</option>
+                <option value="azucar">Azúcar (1kg) - $5.000</option>
+                <option value="cafe">Café (500g) - $10.000</option>
+                <option value="papa">Papa (1kg) - $3.000</option>
+                <option value="cebolla">Cebolla (1kg) - $4.000</option>
+                <option value="tomate">Tomate (1kg) - $5.000</option>
+                <option value="carne">Carne (1kg) - $25.000</option>
+                <option value="pollo">Pollo (1kg) - $18.000</option>
+                <option value="cerveza">Cerveza (6 unidades) - $20.000</option>
+                <option value="gaseosa">Gaseosa (2.5L) - $8.000</option>
+                <option value="pan">Pan (unidad) - $500</option>
+                <option value="huevos">Huevos (30 unidades) - $15.000</option>
+                <option value="queso">Queso (500g) - $12.000</option>
+            </select>
+            
+            <div class="cantidad-control">
+                <label>Cantidad:</label>
+                <div class="contador">
+                    <button class="btn-cantidad" onclick="cambiarCantidad(-1)">-</button>
+                    <input type="number" id="cantidad" value="1" min="1" class="input-cantidad">
+                    <button class="btn-cantidad" onclick="cambiarCantidad(1)">+</button>
+                </div>
+                <button class="btn-agregar" onclick="agregarProducto()">
+                    <i class="fas fa-cart-plus"></i> Agregar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista del Pedido -->
+    <section class="lista-pedido">
+        <h3><i class="fas fa-clipboard-list"></i> Tu Pedido:</h3>
+        <div class="tabla-pedido">
+            <table id="tablaProductos">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Subtotal</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    <!-- Aquí se agregan los productos dinámicamente -->
+                    <tr id="filaVacia">
+                        <td colspan="5" class="vacio">No has agregado productos todavía</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="total-label">TOTAL A PAGAR:</td>
+                        <td colspan="2" class="total-valor">$<span id="totalPagar">0</span></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+
+    <!-- Información del Cliente -->
+    <section class="info-cliente">
+        <h3><i class="fas fa-user"></i> Tus datos:</h3>
+        <div class="formulario-cliente">
+            <input type="text" id="nombreCliente" placeholder="Tu nombre *" required>
+            <input type="tel" id="telefonoCliente" placeholder="Tu teléfono *" required>
+            <input type="text" id="direccionCliente" placeholder="Tu dirección (opcional)">
+            <textarea id="notasCliente" placeholder="Notas adicionales (ej: preferencias, horario)"></textarea>
+        </div>
+    </section>
+
+    <!-- BOTÓN GRANDE DE WHATSAPP -->
+    <div class="whatsapp-grande">
+        <button class="btn-whatsapp-grande" onclick="enviarPedidoWhatsApp()" id="btnWhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <div class="whatsapp-texto">
+                <span class="whatsapp-titulo">ENVIAR PEDIDO POR WHATSAPP</span>
+                <span class="whatsapp-sub">Total: $<span id="totalWhatsApp">0</span></span>
+            </div>
+        </button>
+        <p class="whatsapp-ayuda">Haz clic para enviar tu pedido directamente a nuestro WhatsApp</p>
+    </div>
+
+    <!-- Información de Contacto -->
+    <footer>
+        <div class="info-contacto">
+            <h4><i class="fas fa-info-circle"></i> Información de la Tienda</h4>
+            <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> 313-4971077</p>
+            <p><i class="fas fa-clock"></i> <strong>Horario:</strong> 6:00 AM - 10:00 PM</p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Barrio: Simon Bolivar</p>
+            <p><i class="fas fa-shipping-fast"></i> <strong>Envíos:</strong> A Ocaña y Río de Oro</p>
+        </div>
+        <div class="derechos">
+            <p>Tienda Click © 2024 - Pedidos rápidos por WhatsApp</p>
+            <p class="ayuda">¿Problemas con el pedido? Llama al 313-4971077</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
